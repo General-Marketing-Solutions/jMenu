@@ -44,16 +44,14 @@
 
             // Set global width of the sub-menus links
             if(opts.ulWidth == 'auto')
-                $width = $('.fNiv').outerWidth(false);
+                $width = $(this).children('ul').outerWidth(true); // width the largest sub menu
             else
                 $width = opts.ulWidth;
 
 
 
             $(".jMenu li").each(function() {
-                var
-                    $thisChild = $(this).find('a:first'),
-                    $allUl = $(this).find('ul');
+                var $thisChild = $(this).find('a:first');
 
                 if($.jMenu._IsParent($thisChild))
                 {
